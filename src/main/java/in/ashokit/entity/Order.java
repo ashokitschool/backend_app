@@ -1,6 +1,8 @@
 package in.ashokit.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Date;
 import java.util.HashSet;
@@ -17,7 +19,10 @@ public class Order {
     private Integer totalQuantity;
     private Double totalPrice;
     private String status;
+    @CreationTimestamp
     private Date dateCreated;
+
+    @UpdateTimestamp
     private Date lastUpdate;
 
     @ManyToOne
@@ -109,5 +114,15 @@ public class Order {
 
     public void setTotalQuantity(Integer totalQuantity) {
         this.totalQuantity = totalQuantity;
+    }
+
+    public void add(OrderItem orderItem){
+        if(orderItem!=null){
+            if(orderItems==null){
+                orderItems = new HashSet<>();
+            }
+            orderItems.add(orderItem);
+            orderItem.setOrder(this);
+        }
     }
 }

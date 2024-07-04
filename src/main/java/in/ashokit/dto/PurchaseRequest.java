@@ -11,7 +11,7 @@ public class PurchaseRequest {
 
     private Customer customer;
     private Address shippingAddress;
-    private Order oder;
+    private Order order;
     private Set<OrderItem> orderItems;
 
     public Customer getCustomer() {
@@ -22,12 +22,12 @@ public class PurchaseRequest {
         this.customer = customer;
     }
 
-    public Order getOder() {
-        return oder;
+    public Order getOrder() {
+        return order;
     }
 
-    public void setOder(Order oder) {
-        this.oder = oder;
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     public Set<OrderItem> getOrderItems() {

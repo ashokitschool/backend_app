@@ -5,5 +5,5 @@ import in.ashokit.dto.PurchaseResponse;
 
 public interface OrderService {
 
-    public PurchaseResponse placeOrder(PurchaseRequest purchaseRequest);
+    public PurchaseResponse placeOrder(PurchaseRequest purchaseRequest) throws Exception;
 }

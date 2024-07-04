@@ -15,7 +15,7 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping("/purchase")
-    public PurchaseResponse createOrder(@RequestBody PurchaseRequest purchaseRequest){
+    public PurchaseResponse createOrder(@RequestBody PurchaseRequest purchaseRequest) throws Exception {
         return orderService.placeOrder(purchaseRequest);
     }
 }
